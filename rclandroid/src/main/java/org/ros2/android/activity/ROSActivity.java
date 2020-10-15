@@ -18,7 +18,7 @@ package org.ros2.android.activity;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -29,7 +29,7 @@ import org.ros2.rcljava.publisher.Publisher;
 import org.ros2.rcljava.executors.Executor;
 import org.ros2.rcljava.executors.SingleThreadedExecutor;
 
-public class ROSActivity extends Activity {
+public class ROSActivity extends AppCompatActivity {
     private Executor rosExecutor;
     private Timer timer;
     private Handler handler;
@@ -37,7 +37,7 @@ public class ROSActivity extends Activity {
     private static String logtag = ROSActivity.class.getName();
 
     private static long SPINNER_DELAY = 0;
-    private static long SPINNER_PERIOD_MS = 200;
+    private static long SPINNER_PERIOD_MS = 25;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {

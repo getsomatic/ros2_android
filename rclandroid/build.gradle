@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'org.ros2.tools.gradle'
 
-sourceCompatibility = JavaVersion.VERSION_1_6
-targetCompatibility = JavaVersion.VERSION_1_6
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+  compileSdkVersion 29
+  buildToolsVersion "28.0.3"
   defaultConfig {
-    minSdkVersion 21
-    targetSdkVersion 25
+    minSdkVersion 26
+    targetSdkVersion 29
   }
 }
 
@@ -21,14 +21,32 @@ buildscript {
     maven {
       url "https://plugins.gradle.org/m2/"
     }
+    maven {
+      url 'https://maven.google.com'
+    }
+    google()
+    maven { url 'https://io.github.controlwear' }
   }
 
+
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
+    classpath 'com.android.tools.build:gradle:3.2.0'
     classpath 'gradle.plugin.org.ros2.tools.gradle:ament:0.7.0'
   }
 }
 
 repositories {
-   mavenCentral()
+  jcenter()
+  mavenCentral()
+  mavenLocal()
+  maven { url 'https://maven.google.com'}
+  google()
+}
+
+dependencies {
+  implementation 'com.google.android.material:material:1.2.0'
+  implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+  implementation 'io.github.controlwear:virtualjoystick:1.10.1'
 }
