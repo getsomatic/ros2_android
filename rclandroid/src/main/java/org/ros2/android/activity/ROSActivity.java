@@ -37,7 +37,7 @@ public class ROSActivity extends AppCompatActivity {
     private static String logtag = ROSActivity.class.getName();
 
     private static long SPINNER_DELAY = 0;
-    private static long SPINNER_PERIOD_MS = 25;
+    private static long SPINNER_PERIOD_MS = 10;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
