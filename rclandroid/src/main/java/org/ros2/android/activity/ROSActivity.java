@@ -90,4 +90,8 @@ public class ROSActivity extends AppCompatActivity {
     protected long getPeriod() {
         return SPINNER_PERIOD_MS;
     }
+
+     protected void setPeriod(long period) {
+        SPINNER_PERIOD_MS = period;
+    }
 }
