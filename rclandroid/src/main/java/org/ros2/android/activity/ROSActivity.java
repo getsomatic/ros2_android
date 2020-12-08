@@ -28,7 +28,6 @@ import org.ros2.rcljava.node.Node;
 import org.ros2.rcljava.publisher.Publisher;
 import org.ros2.rcljava.executors.Executor;
 import org.ros2.rcljava.executors.SingleThreadedExecutor;
-import org.ros2.rcljava.executors.MultiThreadedExecutor;
 
 public class ROSActivity extends AppCompatActivity {
     private Executor rosExecutor;
@@ -81,7 +80,7 @@ public class ROSActivity extends AppCompatActivity {
     }
 
     protected Executor createExecutor() {
-        return new MultiThreadedExecutor();
+        return new SingleThreadedExecutor();
     }
 
     protected long getDelay() {
